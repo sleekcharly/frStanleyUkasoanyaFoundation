@@ -57,8 +57,8 @@ const MainNav = ({ links, upperLinks }: Props) => {
       id="main-nav"
       className={
         isFixed
-          ? 'fixed top-0 w-full z-50 bg-black flex items-center justify-between pr-5 py-5'
-          : 'bg-black flex items-center justify-between pr-5 py-5'
+          ? 'fixed top-0 w-full z-50 bg-black flex items-center justify-between pr-5 py-5 shadow-md shadow-slate-900'
+          : 'bg-black flex items-center justify-between pr-5 py-5 shadow-md shadow-slate-900'
       }
     >
       <div
