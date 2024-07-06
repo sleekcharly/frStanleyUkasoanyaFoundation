@@ -67,7 +67,8 @@ const MainNav = ({ links, upperLinks }: Props) => {
         }`}
       >
         {/* foundation logo */}
-        <div
+        <Link
+          href="/"
           className={`relative flex items-center w-[90px] h-[90px]  ${
             isFixed
               ? 'lg:w-[90px] lg:h-[90px]'
@@ -79,16 +80,17 @@ const MainNav = ({ links, upperLinks }: Props) => {
             alt="Fr Stanley Ukasoanya FOundation logo"
             fill
           />
-        </div>
+        </Link>
 
-        <h1
+        <Link
+          href="/"
           className={`text-[#E799DD] font-mono text-base ${
             isFixed ? 'text-lg' : 'lg:text-xl'
           }`}
         >
           Rev. Fr. <br /> Stanley Ukasoanya <br />{' '}
           <span className="text-gray-100">Foundation</span>
-        </h1>
+        </Link>
       </div>
 
       <section className="flex items-center space-x-6">
