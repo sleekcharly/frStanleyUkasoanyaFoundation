@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Hero from '/public/images/home_hero.jpeg';
+import Hero from '/public/images/hero.webp';
 import { Button } from '@/components/ui/button';
 import { CgArrowLongDown } from 'react-icons/cg';
 import Link from 'next/link';
@@ -11,7 +11,12 @@ const Home = (props: Props) => {
   return (
     <div>
       <div className="relative w-full h-screen">
-        <Image src={Hero} alt="Home_hero" fill className="object-cover" />
+        <Image
+          src={Hero}
+          alt="Home_hero"
+          fill
+          className="object-cover opacity-50"
+        />
 
         <header className="absolute z-10 inset-0  mx-auto mt-[120px] flex flex-col space-y-28 text-center">
           <div className="flex flex-col gap-8 text-center">
