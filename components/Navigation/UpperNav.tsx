@@ -15,7 +15,7 @@ const UpperNav = ({ links }: props) => {
   const pathname = usePathname();
 
   return (
-    <div className="bg-[#F2B11A] hidden md:block">
+    <div className="bg-[#bd873c] hidden md:block">
       <nav className="flex py-3 pr-5 items-center justify-end gap-4">
         {links.map((link) => {
           const isActive =
@@ -26,7 +26,7 @@ const UpperNav = ({ links }: props) => {
               href={link.route}
               key={link.label}
               className={cn(
-                'text-base text-gray-600 hover:text-gray-800 hover:font-semibold hover:underline',
+                'text-base text-white hover:text-gray-800 hover:font-semibold hover:underline',
                 {
                   'font-bold text-gray-900 underline': isActive,
                 },

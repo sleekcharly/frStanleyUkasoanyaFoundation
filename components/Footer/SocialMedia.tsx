@@ -13,11 +13,11 @@ const SocialMedia = (props: Props) => {
         <a href="https://www.facebook.com/frStanleyFdn/" target="_blank">
           <FaFacebook className="w-6 h-6" />
         </a>
-        <a href="https://x.com/FrStanleyFdn" target="_blank">
+        <a href="https://x.com/frStanleyFdn" target="_blank">
           <FaX className="w-6 h-6 " />
         </a>
         <a
-          href="https://www.linkedin.com/company/rev-fr-stanley-ukasoanya-foundation"
+          href="https://www.linkedin.com/company/fr-stanley-fdn"
           target="_blank"
         >
           <FaLinkedin className="w-6 h-6" />
