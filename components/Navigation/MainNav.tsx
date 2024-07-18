@@ -82,7 +82,7 @@ const MainNav = ({ links, upperLinks }: Props) => {
           href="/"
           className={`relative w-[100px] h-[50px] xl:w-[140px] xl:h-[80px] md:ml-[140px] lg:ml-[-20px] xl:ml-[-10px] ${
             isFixed &&
-            'md:ml-0 lg:ml-[5px] xl:ml-[10px] xl:w-[130px] xl:h-[70px]'
+            'md:-ml-2 lg:ml-[5px] xl:ml-[10px] xl:w-[130px] xl:h-[70px]'
           }`}
         >
           <Image
