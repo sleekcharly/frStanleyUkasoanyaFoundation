@@ -6,6 +6,7 @@ import { MoveDown } from 'lucide-react';
 import MiniAbout from '@/components/home/MiniAbout';
 import Causes from '@/components/home/Causes';
 import Campaigns from '@/components/home/Campaigns';
+import Donation from '@/components/home/Donation';
 
 type Props = {};
 
@@ -43,6 +44,9 @@ const Home = (props: Props) => {
 
       {/* Causes Section */}
       <Causes />
+
+      {/* Donation Section */}
+      <Donation />
 
       {/* Campaigns section */}
       <Campaigns />
