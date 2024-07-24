@@ -6,7 +6,10 @@ import FamilyLife from '/public/images/family-life.webp';
 
 function MiniAbout() {
   return (
-    <section className="bg-white flex flex-col lg:flex-row items-center justify-center gap-6 p-auto text-center md:text-left p-10 lg:px-32 xl:px-32 xl:py-32">
+    <section
+      id="about-section"
+      className="bg-white flex flex-col lg:flex-row items-center justify-center gap-6 p-auto text-center md:text-left p-10 lg:px-32 xl:px-32 xl:py-32"
+    >
       <div className="flex-1 max-w-[700px]">
         <h2 className="uppercase text-[#bd873c] tracking-wider font-bold text-lg mb-3">
           Who we are

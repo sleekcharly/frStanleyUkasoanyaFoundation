@@ -12,7 +12,7 @@ type Props = {};
 
 const Home = (props: Props) => {
   return (
-    <div>
+    <div className="scroll-smooth">
       <div className="relative w-full h-screen">
         <Image
           src={Hero}
@@ -31,8 +31,8 @@ const Home = (props: Props) => {
             </h2>
           </div>
 
-          <Link href="/" className="w-12 mx-auto ">
-            <Button className="rounded-2xl h-20 w-12 bg-[#bd873c] border border-gray-200 shadow-xl animate-bounce">
+          <Link href="#about-section" className="w-12 mx-auto ">
+            <Button className="rounded-2xl h-20 w-12 bg-[#bd873c] border border-gray-200 shadow-xl md:animate-bounce">
               <MoveDown className="mt-5 text-gray-100" />
             </Button>
           </Link>
