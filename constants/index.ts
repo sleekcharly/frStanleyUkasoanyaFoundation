@@ -32,8 +32,8 @@ export const navLinks = [
   },
 
   {
-    label: 'Family Life',
-    route: '/family-life-center',
+    label: 'Causes',
+    route: '/our-causes',
   },
 
   {

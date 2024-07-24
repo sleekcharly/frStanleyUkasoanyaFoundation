@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Seminarians from '/public/images/seminarians.webp';
 import Logo from '/public/icons/logo-image-only.webp';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 function Donation() {
   return (
@@ -36,9 +37,12 @@ function Donation() {
             Catholic priestly formation, family values, and empowerment.
           </p>
         </div>
-        <Button className="w-full bg-[#bd873c] max-w-[450px] text-lg lg:text-xl xl:text-2xl font-mono uppercase transition-all hover:scale-110">
+        <Link
+          href="/donate"
+          className="w-full bg-[#bd873c] max-w-[450px] text-lg lg:text-xl xl:text-2xl font-mono uppercase transition-all hover:scale-110 text-center text-white"
+        >
           Donate Now
-        </Button>
+        </Link>
       </div>
     </section>
   );
