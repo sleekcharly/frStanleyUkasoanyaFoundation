@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Hero from '/public/images/priest-formation2.webp';
+import AboutCarousel from '@/components/about/AboutCarousel';
 
 function About() {
   return (
@@ -68,6 +69,22 @@ function About() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="bg-gray-100 px-5 py-14 sm:p-20">
+        <div className="flex flex-col items-center justify-center max-w-3xl m-auto">
+          <h1 className="text-[#bd873c] text-center font-bold text-3xl lg:text-4xl  font-serif mb-10 ">
+            Objectives
+          </h1>
+
+          <p className="font-semibold">
+            The Rev. Fr. Stanley Ukasoanya Foundation is guided by three core
+            objectives:
+          </p>
+        </div>
+
+        {/* Carousel */}
+        <AboutCarousel />
       </section>
     </div>
   );
