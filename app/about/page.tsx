@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Hero from '/public/images/priest-formation2.webp';
 import AboutCarousel from '@/components/about/AboutCarousel';
+import AboutVolunteering from '@/components/about/AboutVolunteering';
 
 function About() {
   return (
@@ -71,7 +72,7 @@ function About() {
         </div>
       </section>
 
-      <section className="bg-gray-100 px-5 py-14 sm:p-20">
+      <section className="bg-gray-100 px-5 py-14 sm:p-20 border-b-2 border-b-gray-300">
         <div className="flex flex-col items-center justify-center max-w-3xl m-auto">
           <h1 className="text-[#bd873c] text-center font-bold text-3xl lg:text-4xl  font-serif mb-10 ">
             Objectives
@@ -85,6 +86,11 @@ function About() {
 
         {/* Carousel */}
         <AboutCarousel />
+      </section>
+
+      <section>
+        {/* Volunteer section */}
+        <AboutVolunteering />
       </section>
     </div>
   );
