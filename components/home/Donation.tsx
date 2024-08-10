@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Seminarians from '/public/images/seminarians.webp';
+import Priests from '/public/images/priest-formation5.webp';
 import Logo from '/public/icons/logo-image-only.webp';
 import { Button } from '../ui/button';
 import Link from 'next/link';
@@ -8,13 +8,13 @@ function Donation() {
   return (
     <section className="relative w-full h-[600px] bg-black">
       <Image
-        src={Seminarians}
+        src={Priests}
         alt="Rev. Fr. Stanley Ukasoanya"
         fill
-        className="object-cover opacity-50"
+        className="object-cover opacity-70"
       />
 
-      <div className="absolute p-5 lg:p-10 left-[5%] right-[5%] bottom-10 z-50 bg-white flex flex-col md:flex-row items-center md:justify-center lg:space-x-40">
+      <div className="absolute p-5 lg:p-10 left-[5%] right-[5%] bottom-10 z-10 bg-white flex flex-col md:flex-row items-center md:justify-center lg:space-x-40">
         <div className="max-w-[500px]">
           <div className="relative w-10 h-10 lg:w-16 lg:h-16 mb-5">
             <Image
