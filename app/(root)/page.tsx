@@ -35,7 +35,8 @@ const Home = (props: Props) => {
               A VOCATION <br /> THAT MAKES A LASTING IMPACT
             </h1>
             <h2 className="text-lg md:text-xl p-2 font-semibold">
-              Nurturing the Future of <br /> Priests, Families, and Communities
+              Contributing to the formation of Priests
+              <br /> and nurturing the future of Families and Communities
             </h2>
           </div>
 
