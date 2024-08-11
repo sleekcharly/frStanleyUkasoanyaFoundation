@@ -213,6 +213,7 @@ const MainNav = ({ links, upperLinks }: Props) => {
                     `,
                   {
                     'font-bold text-[#bd873c]': isActive,
+                    'text-gray-700': link.label == 'Donate',
                   },
                 )}
               >
