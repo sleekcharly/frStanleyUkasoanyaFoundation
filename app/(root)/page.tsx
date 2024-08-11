@@ -13,7 +13,7 @@ type Props = {};
 const Home = (props: Props) => {
   return (
     <div className="scroll-smooth">
-      <div className="relative w-screen h-screen overflow-hidden">
+      <div className="relative w-full h-screen overflow-hidden">
         {/* <Image
           src={Hero}
           alt="Home_hero"

@@ -11,7 +11,7 @@ function Donation() {
         src={Priests}
         alt="Rev. Fr. Stanley Ukasoanya"
         fill
-        className="object-cover opacity-70"
+        className="object-cover opacity-90"
       />
 
       <div className="absolute p-5 lg:p-10 left-[5%] right-[5%] bottom-10 z-10 bg-white flex flex-col md:flex-row items-center md:justify-center lg:space-x-40">

@@ -1,17 +1,17 @@
 export const upperNavLinks = [
   {
     label: 'Events calendar',
-    route: '/events',
+    route: '/',
   },
 
   {
     label: 'Get involved',
-    route: '/volunteer',
+    route: '/',
   },
 
   {
     label: 'Get support',
-    route: '/get-support',
+    route: '/',
   },
 
   {
@@ -38,7 +38,7 @@ export const navLinks = [
 
   {
     label: 'Insights & News',
-    route: '/media-center',
+    route: '/',
   },
 
   {
