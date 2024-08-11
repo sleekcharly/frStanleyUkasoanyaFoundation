@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import Hero from '/public/images/hero.webp';
+import VideoHero from '/public/videos/home_video_hero.mp4';
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { MoveDown } from 'lucide-react';
@@ -13,12 +13,20 @@ type Props = {};
 const Home = (props: Props) => {
   return (
     <div className="scroll-smooth">
-      <div className="relative w-full h-screen">
-        <Image
+      <div className="relative w-screen h-screen overflow-hidden">
+        {/* <Image
           src={Hero}
           alt="Home_hero"
           fill
           className="object-cover opacity-50"
+        /> */}
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
+          src={VideoHero}
+          autoPlay
+          loop
+          muted
+          playsInline
         />
 
         <header className="absolute z-10 inset-0  mx-auto mt-[120px] flex flex-col space-y-28 text-center">
