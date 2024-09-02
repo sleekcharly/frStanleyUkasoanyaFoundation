@@ -19,6 +19,15 @@ const ContactForm = (props: Props) => {
     message: '',
   });
 
+  //   flag emoji
+  function getFlagEmoji(countryCode: string) {
+    return countryCode
+      .toUpperCase()
+      .replace(/./g, (char) =>
+        String.fromCodePoint(127397 + char.charCodeAt(0)),
+      );
+  }
+
   const [status, setStatus] = useState('');
 
   const handleChange = (
@@ -112,11 +121,13 @@ const ContactForm = (props: Props) => {
               onChange={handleChange}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             >
-              {countryCodes.map((country) => (
-                <option key={country.code} value={country.dial_code}>
-                  {country.dial_code}
-                </option>
-              ))}
+              {countryCodes.map((country) => {
+                return (
+                  <option key={country.code} value={country.dial_code}>
+                    ({getFlagEmoji(country.code)}) {country.dial_code}
+                  </option>
+                );
+              })}
             </select>
           </div>
 

@@ -49,7 +49,7 @@ export const navLinks = [
 
 export const phoneNumbers = [
   {
-    label: 'Enquires',
+    label: 'Operations',
     number: 2347076829669,
   },
   {
@@ -61,7 +61,7 @@ export const phoneNumbers = [
 export const emails = [
   {
     label: 'info',
-    email: 'frstanleyukasoanyafoundation@gmail.com',
+    email: 'info@frstanleyfdn.org',
   },
 ];
 
@@ -1519,3 +1519,7 @@ export const countryPhoneCodes = [
     code: 'ZW',
   },
 ];
+
+export const nairaAmounts = [5000, 50000, 100000, 500000];
+
+export const dollarAmounts = [25.0, 50.0, 100.0, 250.0];
