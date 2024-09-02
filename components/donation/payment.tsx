@@ -38,6 +38,8 @@ import MasterCard from '/public/icons/master_card_logo.png';
 import VisaCard from '/public/icons/visa_logo.png';
 import VerveCard from '/public/icons/verve_logo.png';
 import { useRouter } from 'next/navigation';
+import { doc, setDoc } from 'firebase/firestore';
+import { db } from '@/lib/db/firebase';
 
 const Payment = () => {
   // payment states
@@ -95,22 +97,36 @@ const Payment = () => {
     const { email, amount, comment, first_name, last_name, paymentInterval } =
       values;
 
+    // handle payment with paystack
+    const popup = new PaystackPop();
+
+    // set current time
+    const currentTime = Date.now();
+
     try {
       if (onlinePayment) {
-        // handle payment with paystack
-        const popup = new PaystackPop();
-
-        // set current time
-        const currentTime = Date.now();
-
         // Unique transaction reference
         const ref = `fr-stanley-fdn-donate-${currentTime}-${
           Math.floor(Math.random() * 1000000000000) + 1
         }`;
 
         // success action
-        const onSuccess = () => {
+        const onSuccess = async () => {
           router.push(`https://frstanleyfdn.org/donation_success?ref=${ref}`);
+
+          await setDoc(doc(db, 'transactions', ref), {
+            amount: amount,
+            email: email,
+            comment: comment,
+            reference: ref,
+            fullName: first_name + ' ' + last_name,
+            payment_interval: recurring && paymentInterval,
+            online_payment: onlinePayment,
+            funds_transferred: fundsTransferred && fundsTransferred,
+            recurring: recurring,
+            accept_recurring: acceptRecurring,
+            createdAt: new Date(),
+          });
         };
 
         if (recurring) {
@@ -135,9 +151,32 @@ const Payment = () => {
             onSuccess,
           });
         }
+      } else {
+        // offline payment (bank transfer)
+        // Unique transaction reference
+        const ref = `fr-stanley-fdn-donate-offline-${currentTime}-${
+          Math.floor(Math.random() * 1000000000000) + 1
+        }`;
+
+        await setDoc(doc(db, 'transactions', ref), {
+          amount: amount,
+          email: email,
+          comment: comment,
+          reference: ref,
+          fullName: first_name + ' ' + last_name,
+          payment_interval: recurring && paymentInterval,
+          online_payment: onlinePayment,
+          funds_transferred: fundsTransferred && fundsTransferred,
+          recurring: recurring,
+          accept_recurring: acceptRecurring,
+          createdAt: new Date(),
+        });
+
+        router.push(`https://frstanleyfdn.org/donation_success?ref=${ref}`);
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
+      setError(err.message);
     }
   }
 
