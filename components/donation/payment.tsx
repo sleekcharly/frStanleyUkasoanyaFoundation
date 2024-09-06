@@ -121,6 +121,8 @@ const Payment = () => {
           Math.floor(Math.random() * 1000000000000) + 1
         }`;
 
+        console.log('key:', process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY);
+
         // success action
         const onSuccess = async () => {
           router.push(`https://frstanleyfdn.org/donation_success?ref=${ref}`);
