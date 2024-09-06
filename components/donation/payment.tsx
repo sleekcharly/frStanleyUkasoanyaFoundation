@@ -103,6 +103,11 @@ const Payment = () => {
   // initialize router
   const router = useRouter();
 
+  // set variable Key
+  const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC;
+
+  console.log('key: ', publicKey);
+
   // define submit handler
   async function onSubmit(values: z.infer<typeof formSchema>) {
     //  get form values
@@ -120,8 +125,6 @@ const Payment = () => {
         const ref = `fr-stanley-fdn-donate-${currentTime}-${
           Math.floor(Math.random() * 1000000000000) + 1
         }`;
-
-        console.log('key:', process.env.NEXT_PUBLIC_PAYSTACK_PK);
 
         // success action
         const onSuccess = async () => {
@@ -144,7 +147,7 @@ const Payment = () => {
 
         if (recurring) {
           paystackPopup.newTransaction({
-            key: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC,
+            key: publicKey,
             email: email,
             amount: amount * 100,
             firstName: first_name,
@@ -155,7 +158,7 @@ const Payment = () => {
           });
         } else {
           paystackPopup.newTransaction({
-            key: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC,
+            key: publicKey,
             email: email,
             amount: amount * 100,
             firstName: first_name,
