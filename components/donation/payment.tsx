@@ -31,7 +31,13 @@ import { Label } from '../ui/label';
 import { BsBank } from 'react-icons/bs';
 import Image from 'next/image';
 import numeral from 'numeral';
+import dynamic from 'next/dynamic';
 import PaystackPop from '@paystack/inline-js';
+
+// Import Paystack inline library dynamically with SSR disabled
+// const PaystackPop: any = dynamic(() => import('@paystack/inline-js'), {
+//   ssr: false,
+// });
 
 // card images
 import MasterCard from '/public/icons/master_card_logo.png';
@@ -97,22 +103,68 @@ const Payment = () => {
     const { email, amount, comment, first_name, last_name, paymentInterval } =
       values;
 
-    // handle payment with paystack
-    const popup = new PaystackPop();
+    // Ensure PaystackPop is only used in the browser
+    if (typeof window !== 'undefined') {
+      // handle payment with paystack
+      const popup = new PaystackPop();
 
-    // set current time
-    const currentTime = Date.now();
+      // set current time
+      const currentTime = Date.now();
 
-    try {
-      if (onlinePayment) {
-        // Unique transaction reference
-        const ref = `fr-stanley-fdn-donate-${currentTime}-${
-          Math.floor(Math.random() * 1000000000000) + 1
-        }`;
+      try {
+        if (onlinePayment) {
+          // Unique transaction reference
+          const ref = `fr-stanley-fdn-donate-${currentTime}-${
+            Math.floor(Math.random() * 1000000000000) + 1
+          }`;
 
-        // success action
-        const onSuccess = async () => {
-          router.push(`https://frstanleyfdn.org/donation_success?ref=${ref}`);
+          // success action
+          const onSuccess = async () => {
+            router.push(`https://frstanleyfdn.org/donation_success?ref=${ref}`);
+
+            await setDoc(doc(db, 'transactions', ref), {
+              amount: amount,
+              email: email,
+              comment: comment,
+              reference: ref,
+              fullName: first_name + ' ' + last_name,
+              payment_interval: recurring && paymentInterval,
+              online_payment: onlinePayment,
+              funds_transferred: fundsTransferred && fundsTransferred,
+              recurring: recurring,
+              accept_recurring: acceptRecurring,
+              createdAt: new Date(),
+            });
+          };
+
+          if (recurring) {
+            popup.newTransaction({
+              key: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
+              email: email,
+              amount: amount * 100,
+              firstName: first_name,
+              lastName: last_name,
+              reference: ref,
+              planInterval: `${paymentInterval}ly`,
+              onSuccess,
+            });
+          } else {
+            popup.newTransaction({
+              key: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
+              email: email,
+              amount: amount * 100,
+              firstName: first_name,
+              lastName: last_name,
+              reference: ref,
+              onSuccess,
+            });
+          }
+        } else {
+          // offline payment (bank transfer)
+          // Unique transaction reference
+          const ref = `fr-stanley-fdn-donate-offline-${currentTime}-${
+            Math.floor(Math.random() * 1000000000000) + 1
+          }`;
 
           await setDoc(doc(db, 'transactions', ref), {
             amount: amount,
@@ -127,56 +179,13 @@ const Payment = () => {
             accept_recurring: acceptRecurring,
             createdAt: new Date(),
           });
-        };
 
-        if (recurring) {
-          popup.newTransaction({
-            key: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
-            email: email,
-            amount: amount * 100,
-            firstName: first_name,
-            lastName: last_name,
-            reference: ref,
-            planInterval: `${paymentInterval}ly`,
-            onSuccess,
-          });
-        } else {
-          popup.newTransaction({
-            key: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
-            email: email,
-            amount: amount * 100,
-            firstName: first_name,
-            lastName: last_name,
-            reference: ref,
-            onSuccess,
-          });
+          router.push(`https://frstanleyfdn.org/donation_success?ref=${ref}`);
         }
-      } else {
-        // offline payment (bank transfer)
-        // Unique transaction reference
-        const ref = `fr-stanley-fdn-donate-offline-${currentTime}-${
-          Math.floor(Math.random() * 1000000000000) + 1
-        }`;
-
-        await setDoc(doc(db, 'transactions', ref), {
-          amount: amount,
-          email: email,
-          comment: comment,
-          reference: ref,
-          fullName: first_name + ' ' + last_name,
-          payment_interval: recurring && paymentInterval,
-          online_payment: onlinePayment,
-          funds_transferred: fundsTransferred && fundsTransferred,
-          recurring: recurring,
-          accept_recurring: acceptRecurring,
-          createdAt: new Date(),
-        });
-
-        router.push(`https://frstanleyfdn.org/donation_success?ref=${ref}`);
+      } catch (err: any) {
+        console.error(err);
+        setError(err.message);
       }
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message);
     }
   }
 
