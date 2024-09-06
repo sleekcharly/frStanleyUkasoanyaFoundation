@@ -3,13 +3,13 @@
 import Image from 'next/image';
 import PriestFormation from '/public/images/priest-formation6.webp';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/lib/db/firebase';
 import CheckMark from '/public/icons/green-check-mark.png';
 import Link from 'next/link';
 
-const DonationSuccess = () => {
+const DonationSuccessContent = () => {
   const searchParams = useSearchParams();
 
   const ref = searchParams.get('ref');
@@ -83,5 +83,12 @@ const DonationSuccess = () => {
     </div>
   );
 };
+
+// main DonationSuccess component with Suspense
+const DonationSuccess = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <DonationSuccessContent />
+  </Suspense>
+);
 
 export default DonationSuccess;
