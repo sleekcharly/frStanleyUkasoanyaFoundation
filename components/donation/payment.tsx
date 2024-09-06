@@ -106,8 +106,6 @@ const Payment = () => {
   // set variable Key
   const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC;
 
-  console.log('key: ', publicKey);
-
   // define submit handler
   async function onSubmit(values: z.infer<typeof formSchema>) {
     //  get form values
@@ -561,7 +559,7 @@ const Payment = () => {
                     recurring ? 'text-xs capitalize text-red-600' : 'hidden'
                   }`}
                 >
-                  *Donations would be made {paymentInterval}ly
+                  *Donations would be made {paymentInterval}
                 </p>
               </div>
             </div>
@@ -592,7 +590,7 @@ const Payment = () => {
                       htmlFor="recurring_terms"
                       className="text-xs  lowercase leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
-                      Click to accept {paymentInterval}ly donations
+                      Click to accept {paymentInterval} donations
                     </label>
                   </div>
                   {onlinePayment && recurring && (
