@@ -144,7 +144,7 @@ const Payment = () => {
 
         if (recurring) {
           paystackPopup.newTransaction({
-            key: process.env.NEXT_PUBLIC_PAYSTACK_PK,
+            key: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC,
             email: email,
             amount: amount * 100,
             firstName: first_name,
@@ -155,7 +155,7 @@ const Payment = () => {
           });
         } else {
           paystackPopup.newTransaction({
-            key: process.env.NEXT_PUBLIC_PAYSTACK_PK,
+            key: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC,
             email: email,
             amount: amount * 100,
             firstName: first_name,
