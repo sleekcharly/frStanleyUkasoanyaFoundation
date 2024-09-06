@@ -7,7 +7,7 @@ declare module '@paystack/inline-js' {
 
   interface PaystackTransactionOptions {
     // Required Options
-    key: string | undefined; // Your Paystack public key
+    key: string; // Your Paystack public key
     amount: number; // The amount of the transaction in kobo
     email: string; // The email address of the customer
 

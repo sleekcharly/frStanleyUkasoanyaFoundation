@@ -31,16 +31,6 @@ import { Label } from '../ui/label';
 import { BsBank } from 'react-icons/bs';
 import Image from 'next/image';
 import numeral from 'numeral';
-import dynamic from 'next/dynamic';
-// import PaystackPop from '@paystack/inline-js';
-
-// Import Paystack inline library dynamically with SSR disabled
-// const PaystackPop = dynamic(
-//   () => import('@paystack/inline-js'),
-//   {
-//     ssr: false,
-//   },
-// );
 
 // card images
 import MasterCard from '/public/icons/master_card_logo.png';
@@ -80,8 +70,6 @@ const Payment = () => {
       comment: '',
     },
   });
-
-  console.log(paymentInterval);
 
   // handle the paymentInterval value change
   const handleValueChange = (value: string) => {
