@@ -29,10 +29,11 @@ const options = {
   scrollwheel: false,
 };
 
-// map ID
-const MAPID = process.env.NEXT_PUBLIC_MAPID;
-
 const GoogleMapComponent = () => {
+  // map ID
+  const MAPID = process.env.NEXT_PUBLIC_MAPID;
+  console.log('map id: ', MAPID);
+
   // `markerRef` and `marker are needed to establish the connection between
   // between the marker and the info =Window
   const [markerRef, marker] = useAdvancedMarkerRef();
