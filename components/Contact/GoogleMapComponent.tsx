@@ -25,14 +25,9 @@ const position = {
   lng: 3.326205302806045,
 };
 
-const options = {
-  scrollwheel: false,
-};
-
 const GoogleMapComponent = () => {
   // map ID
   const MAPID = process.env.NEXT_PUBLIC_MAPID;
-  console.log('map id: ', MAPID);
 
   // `markerRef` and `marker are needed to establish the connection between
   // between the marker and the info =Window
