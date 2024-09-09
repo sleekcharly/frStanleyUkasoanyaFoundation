@@ -14,12 +14,6 @@ const Home = (props: Props) => {
   return (
     <div className="scroll-smooth">
       <div className="relative w-full h-screen overflow-hidden">
-        {/* <Image
-          src={Hero}
-          alt="Home_hero"
-          fill
-          className="object-cover opacity-50"
-        /> */}
         <video
           className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
           src={VideoHero}
@@ -27,6 +21,7 @@ const Home = (props: Props) => {
           loop
           muted
           playsInline
+          preload="metadata" // or auto
         />
 
         <header className="absolute z-10 inset-0  mx-auto mt-[120px] flex flex-col space-y-28 text-center">
