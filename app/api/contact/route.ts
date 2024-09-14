@@ -15,8 +15,8 @@ export async function POST(request: Request) {
   // Send email using Resend API
   try {
     const { data, error } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: 'c_ukasoanya@yahoo.com',
+      from: `${name} <web@frstanleyfdn.org>`,
+      to: 'info@frstanleyfdn.org',
       subject:
         subject && subject === 'Other' ? 'New message from ' + name : subject,
       html: `<div>
@@ -37,6 +37,7 @@ export async function POST(request: Request) {
     });
 
     if (error) {
+      console.error(error);
       return NextResponse.json(
         { success: false, error: error },
         { status: 500 },

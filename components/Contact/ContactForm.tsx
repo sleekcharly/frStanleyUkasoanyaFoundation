@@ -58,7 +58,7 @@ const ContactForm = (props: Props) => {
       setFormData({
         name: '',
         email: '',
-        countryCode: '',
+        countryCode: '+234',
         phoneNumber: '',
         subject: '',
         message: '',
