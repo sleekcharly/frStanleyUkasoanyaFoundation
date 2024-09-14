@@ -10,6 +10,7 @@ const Donate = () => {
           src={PriestFormation}
           alt="Priest formation for Rev. Fr. Stanley Ukasoanya Foundation"
           fill
+          sizes="100vw"
           className="object-cover grayscale opacity-90"
         />
         <div className="flex flex-col items-center justify-center absolute inset-0 m-auto p-2 lg:p-0 w-full lg:w-1/2 h-1/2">

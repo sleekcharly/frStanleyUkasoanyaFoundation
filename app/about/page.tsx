@@ -64,6 +64,7 @@ function About() {
                   src="/images/fr-stanley-ukasoanya2.webp"
                   alt="Reverend Father Stanley Ukasoanya"
                   fill
+                  sizes="(max-width: 768px) 350px, (max-width: 1280px) 450px, 300px"
                   className="object-cover rounded-2xl"
                 />
               </div>

@@ -26,6 +26,7 @@ function Causes() {
                 src={PriestFormation}
                 alt="Priestly formation"
                 fill
+                sizes="(max-width: 1024px) 450px, 100vw"
                 className="object-cover rounded-t-lg"
               />
             </div>
@@ -45,6 +46,7 @@ function Causes() {
                 src={FamilyLife}
                 alt="Family life photo"
                 fill
+                sizes="(max-width: 1024px) 450px, 100vw"
                 className="object-cover rounded-t-lg"
               />
             </div>
@@ -58,11 +60,12 @@ function Causes() {
             </div>
           </div>
           <div className="max-w-[450px] border border-gray-300 rounded-lg shadow-md">
-            <div className="relative  w-full max-w-[450px] h-[250px]">
+            <div className="relative w-full max-w-[450px] h-[250px]">
               <Image
                 src={Empowerment}
                 alt="Empowerment photo"
                 fill
+                sizes="(max-width: 1024px) 450px, 100vw"
                 className="object-cover rounded-t-lg"
               />
             </div>

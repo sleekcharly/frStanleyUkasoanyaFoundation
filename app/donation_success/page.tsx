@@ -46,6 +46,7 @@ const DonationSuccessContent = () => {
           src={PriestFormation}
           alt="Priest formation for Rev. Fr. Stanley Ukasoanya Foundation"
           fill
+          sizes="100vw"
           className="object-cover grayscale opacity-90"
         />
         <section className="flex flex-col items-center justify-center gap-5 bg-green-50 absolute inset-0 m-auto p-2 lg:p-5 w-full max-w-2xl lg:w-1/2 h-3/4 lg:h-[90%]">
@@ -54,6 +55,7 @@ const DonationSuccessContent = () => {
               src={CheckMark}
               alt="Donation check mark"
               fill
+              sizes="(max-width: 768px) 100px, 80px"
               className="object-cover"
             />
           </div>
@@ -76,6 +78,7 @@ const DonationSuccessContent = () => {
               src="/icons/logo-image-only.png"
               alt="Fr Stanley Ukasoanya FOundation logo"
               fill
+              sizes="90px"
             />
           </Link>
         </section>

@@ -44,6 +44,7 @@ const page = (props: Props) => {
             <Image
               src={HeroImage}
               fill
+              sizes="(max-width: 640px) 600px, (max-width: 768px) 750px, (max-width: 1024px) 700px"
               alt="Hero Image"
               className="object-cover rounded-2xl lg:rounded-none lg:rounded-s-[50px]"
             />

@@ -60,6 +60,7 @@ function AboutCarousel() {
                   src={PriestFormation}
                   alt="Priestly Formation"
                   fill
+                  sizes="(max-width: 768px) 470px, (max-width: 1280) 570px, 350px"
                   className="object-cover rounded-md shadow-md"
                 />
               </div>
@@ -95,6 +96,7 @@ function AboutCarousel() {
                   src={FamilyLife}
                   alt="Family Life (Reverend father Stanley Ukasoanya Foundation"
                   fill
+                  sizes="(max-width: 768px) 470px, (max-width: 1280px) 570px, 350px"
                   className="object-cover rounded-md shadow-md"
                 />
               </div>
@@ -130,6 +132,7 @@ function AboutCarousel() {
                   src={Empowerment}
                   alt="Empowerment (Reverend Father Stanley Ukasoanya Foundation"
                   fill
+                  sizes="(max-width: 768px) 470px, (max-width: 1280px) 570px, 350px"
                   className="object-cover rounded-md shadow-md"
                 />
               </div>

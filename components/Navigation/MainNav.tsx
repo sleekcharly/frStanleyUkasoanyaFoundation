@@ -75,6 +75,7 @@ const MainNav = ({ links, upperLinks }: Props) => {
             src="/icons/logo-image-only.png"
             alt="Fr Stanley Ukasoanya FOundation logo"
             fill
+            sizes="(max-width: 768px) 120px, (max-width: 1280px) 150px, 90px"
           />
         </Link>
 
@@ -89,6 +90,7 @@ const MainNav = ({ links, upperLinks }: Props) => {
             src="/icons/logo-text-only.png"
             alt="Rev Fr Stanley Ukasoanya Foundation"
             fill
+            sizes="(max-width: 1280px) 140px, 100px"
           />
         </Link>
       </div>

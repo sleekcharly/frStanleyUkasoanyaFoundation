@@ -21,6 +21,7 @@ function Donation() {
               src={Logo}
               alt="Reverend Father Stanley Ukasoanya Foundation"
               fill
+              sizes="(max-width: 1024px) 64px, 40px"
               className="object-cover"
             />
           </div>

@@ -44,6 +44,7 @@ function MiniAbout() {
           <Image
             src={PriestFormation}
             fill
+            sizes="(max-width: 768px) 400px, 300px"
             alt="Priest Formation"
             className="object-cover rounded-md"
           />
@@ -53,6 +54,7 @@ function MiniAbout() {
             <Image
               src={FamilyLife}
               fill
+              sizes="(max-width: 768px) 280px, 220px"
               alt="Priest Formation"
               className="object-cover rounded-md"
             />

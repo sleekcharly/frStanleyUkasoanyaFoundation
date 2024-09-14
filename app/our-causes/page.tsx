@@ -15,6 +15,7 @@ function Causes() {
           alt="Causes hero image"
           src={CausesHero}
           fill
+          sizes="100vw"
           className="object-cover opacity-90"
         />
 
@@ -33,6 +34,7 @@ function Causes() {
                 src={PriestFormation}
                 alt="Priestly formation"
                 fill
+                sizes="450px"
                 className="object-cover rounded-t-lg"
               />
             </div>
@@ -52,6 +54,7 @@ function Causes() {
                 src={FamilyLife}
                 alt="Family life photo"
                 fill
+                sizes="450px"
                 className="object-cover rounded-t-lg"
               />
             </div>
@@ -70,6 +73,7 @@ function Causes() {
                 src={Empowerment}
                 alt="Empowerment photo"
                 fill
+                sizes="450px"
                 className="object-cover rounded-t-lg"
               />
             </div>
