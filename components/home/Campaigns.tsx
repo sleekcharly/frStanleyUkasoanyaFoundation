@@ -2,6 +2,7 @@ import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 import FrStanley from '/public/images/fr-stanley-ukasoanya.webp';
+import StGregory from '/public/images/st_gregory_moniya.webp';
 import CardPhoto1 from '/public/images/memorial-1.webp';
 import CardPhoto2 from '/public/images/memorial-2.webp';
 import CardPhoto3 from '/public/images/memorial-3.webp';
@@ -17,7 +18,55 @@ function Campaigns() {
       </div>
 
       {/* Events section */}
-      {/* <div className="flex flex-col xl:flex-row items-center xl:justify-center gap-10">
+      <div className="flex flex-col xl:flex-row items-center xl:justify-center gap-10 mb-6">
+        {/* Event one */}
+        <div className="flex flex-col lg:flex-row xl:flex-col lg:border-b-[8px] border-b-[#bd873c] xl:border-b-0 items-center w-[392px] lg:w-full xl:w-[392px]">
+          <div className="relative w-full max-w-[392px] h-[294px]">
+            <Image
+              src={StGregory}
+              alt="Rev. Fr. Stanley Ukasoanya"
+              fill
+              className="object-cover rounded-t-lg"
+            />
+          </div>
+          <div className="w-[350px] max-h-[580px] overflow-y-scroll sm:w-[360px] lg:w-full xl:max-w-[360px] p-7 border-b-[8px] border-b-[#bd873c] lg:border-b-0 xl:border-b-[8px] shadow-xl hover:bg-[#bd873c] -mt-20 lg:mt-0 xl:-mt-20 bg-white z-10 group">
+            <div className="flex items-center mb-6 font-bold">
+              <h3 className="flex-1 text-xl xl:text-2xl">
+                Couples Day with Rev. Fr. Stanley Ukasoanya Foundation.
+              </h3>
+              <ChevronRight className="group-hover:text-white" />
+            </div>
+            <p className="text-md ">
+              📢 You&apos;re Invited! 🌟 <br />
+              <br />
+              Join us for a special Couples Day with Rev. Fr. Stanley Ukasoanya
+              Foundation at Saint Gregory Catholic Church, Moniya, Ibadan!{' '}
+              <br />
+              <br />
+              🗓️ Date: Friday, April 11 2025 <br />
+              🕘 Time: 10:00am <br />
+              📍 Venue: Saint Gregory Catholic Church, Moniya, Ibadan <br />
+              <br />
+              💡 Topics Include: <br />
+              <br />
+              ✅ Navigating Family Challenges in Present-Day Nigeria: Economic
+              Challenges <br />
+              ✅ Keeping Faith Alive Amidst Challenges <br />
+              <br />
+              Don&apos;t miss this opportunity to strengthen your family bonds
+              and grow in faith! <br />
+              <br />
+              Come and be enriched! Tag & invite others! 🙌✨
+              <br />
+              <br />
+              <em className="text-xs">#CouplesDay</em>{' '}
+              <em className="text-xs">#StrongerFamilies</em>{' '}
+              <em className="text-xs">#FaithAndLove</em>
+            </p>
+          </div>
+        </div>
+
+        {/* Event two */}
         <div className="flex flex-col lg:flex-row xl:flex-col lg:border-b-[8px] border-b-[#bd873c] xl:border-b-0 items-center w-[392px] lg:w-full xl:w-[392px]">
           <div className="relative w-full max-w-[392px] h-[294px]">
             <Image
@@ -27,7 +76,7 @@ function Campaigns() {
               className="object-cover rounded-t-lg"
             />
           </div>
-          <div className="w-[350px] sm:w-[360px] lg:w-full xl:max-w-[360px] p-7 border-b-[8px] border-b-[#bd873c] lg:border-b-0 xl:border-b-[8px] shadow-xl hover:bg-[#bd873c] -mt-20 lg:mt-0 xl:-mt-20 bg-white z-10 group">
+          <div className="w-[350px] max-h-[580px] overflow-y-scroll sm:w-[360px] lg:w-full xl:max-w-[360px] p-7 border-b-[8px] border-b-[#bd873c] lg:border-b-0 xl:border-b-[8px] shadow-xl hover:bg-[#bd873c] -mt-20 lg:mt-0 xl:-mt-20 bg-white z-10 group">
             <div className="flex items-center mb-6 font-bold">
               <h3 className="flex-1 text-xl xl:text-2xl">
                 One Year Memorial 2024
@@ -51,7 +100,7 @@ function Campaigns() {
             </p>
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* Events Pictures section */}
       <div className="p-1">
